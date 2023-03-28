@@ -8,5 +8,4 @@ package lesson_1
 
         println(String.format("%02d:%02d", minuteInSpace, secondInSpace))
 
-
     }
