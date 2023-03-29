@@ -4,11 +4,11 @@ package lesson_2
 
         val baff = 0.2
 
-        var crystalline = 7
-        var bonusCrystalOre = crystalline * baff
+        val crystalline = 7
+        val bonusCrystalOre = crystalline * baff
         println("Бонусная кристальная руда будет ровняться = ${bonusCrystalOre.toInt()} (у.е.)")
 
-        var iron = 11
-        var bonusIronOre = iron * baff
+        val iron = 11
+        val bonusIronOre = iron * baff
         println("Бонусная железная руда будет ровняться = ${bonusIronOre.toInt()} (у.е.)")
     }
