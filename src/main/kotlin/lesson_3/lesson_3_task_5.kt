@@ -4,15 +4,12 @@ fun main(){
 
         val playerTurn = "D2-D4;0"
 
-        val stepsAndCounter = playerTurn.split(";")
-        var steps = stepsAndCounter[0]
-        val stepOldAndNew = steps.split("-")
-        val stepOld = stepOldAndNew[0]
-        val stepNew = stepOldAndNew[1]
+        val stepsAndCounter = playerTurn.split(";","-")
+        var stepOld = stepsAndCounter[0]
+        val stepNew = stepsAndCounter[1]
+        val counter = stepsAndCounter[2]
 
-        val counter = steps[1]
-
-        println("""
+       println("""
             $stepOld
             $stepNew
             $counter
