@@ -1,17 +1,19 @@
 package lesson_3
 
-fun main(){
+fun main() {
 
-        val playerTurn = "D2-D4;0"
+    val playerTurn = "D2-D4;0"
 
-        val stepsAndCounter = playerTurn.split(";","-")
-        var stepOld = stepsAndCounter[0]
-        val stepNew = stepsAndCounter[1]
-        val counter = stepsAndCounter[2]
+    val stepsAndCounter = playerTurn.split(";", "-")
+    var stepOld = stepsAndCounter[0]
+    val stepNew = stepsAndCounter[1]
+    val counter = stepsAndCounter[2]
 
-       println("""
+    println(
+        """
             $stepOld
             $stepNew
             $counter
-        """.trimIndent())
-    }
+        """.trimIndent()
+    )
+}
