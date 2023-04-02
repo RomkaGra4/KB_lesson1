@@ -1,13 +1,16 @@
 package lesson_5
 
+import kotlin.random.Random
+
 fun main() {
 
     println("Введите два числа (от 1 до 100):")
-    val firstUserNumber = readLine()!!.toInt()
-    val secondUserNumber = readLine()!!.toInt()
+    val firstUserNumber = readln().toInt()
+    val secondUserNumber = readln().toInt()
 
-    val firstNumber = (Math.random() * 100).toInt()
-    val secondNumber = (Math.random() * 100).toInt()
+    val firstNumber = (0..100).random()
+    val secondNumber = (0..100).random()
+
 
     val result =
         if (firstUserNumber == firstNumber && secondUserNumber == secondNumber) "Поздравляем! Вы выиграли главный приз!"
