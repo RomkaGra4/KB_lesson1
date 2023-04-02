@@ -1,6 +1,6 @@
 package lesson_5
 
-fun main(){
+fun main() {
 
     val sum = 9 + 6
     println("Для входа в программу, укажите сумму двух чисел: 9 и 6.")
