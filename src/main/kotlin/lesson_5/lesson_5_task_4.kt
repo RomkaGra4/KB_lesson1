@@ -6,11 +6,10 @@ fun main() {
     val password = "password"
 
     print("Введите логин:")
-    val userLogin = readLine()!!.toString()
-    if (login == userLogin) {
+    if (login == readln()) {
         print("Введите пароль:")
-        val userPassword = readLine()!!.toString()
-        if (password == userPassword)
+
+        if (password == readln())
             println("Добро пожаловать!")
     } else
         println("Пользователь не найден! Просьба пройти регистрацию.")
