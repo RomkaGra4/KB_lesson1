@@ -3,19 +3,18 @@ package lesson_6
 fun main(){
 
     print("Для регистрации введите логин: ")
-    val userName = readLine()!!.toString()
+    val userName = readln()
     print("Введите пароль: ")
-    val userPassword = readLine()!!.toString()
-
+    val userPassword = readln()
     print("Введите Ваш логин:")
 
     do {
-        val login = readLine()!!.toString()
-    } while (login == userName)
+        val login = readln()
+    } while (login != userName)
 
     println("Введите пароль:")
     do {
-        val password = readLine()!!.toString()
+        val password = readln()
             if (userPassword != password)
             println("Пароль некорректный! Повторите попоытку!")
     } while (userPassword != password)
