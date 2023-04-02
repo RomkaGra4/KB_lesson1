@@ -11,7 +11,6 @@ fun main() {
     val firstNumber = (0..100).random()
     val secondNumber = (0..100).random()
 
-
     val result =
         if (firstUserNumber == firstNumber && secondUserNumber == secondNumber) "Поздравляем! Вы выиграли главный приз!"
         else if (firstUserNumber == firstNumber || secondUserNumber == secondNumber) "Вы выиграли утешительный приз!"
