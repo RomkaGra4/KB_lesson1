@@ -8,8 +8,8 @@ fun main() {
     val firstUserNumber = readln().toInt()
     val secondUserNumber = readln().toInt()
 
-    val firstNumber = (0..100).random()
-    val secondNumber = (0..100).random()
+    val firstNumber = (1..100).random()
+    val secondNumber = (1..100).random()
 
     val result =
         if (firstUserNumber == firstNumber && secondUserNumber == secondNumber) "Поздравляем! Вы выиграли главный приз!"
