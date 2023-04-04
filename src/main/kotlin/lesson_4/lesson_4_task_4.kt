@@ -3,15 +3,14 @@ package lesson_4
 fun main() {
 
     val trainingDay = 5
-    val armAndAbsExercises = trainingDay % 2 != 0
-    val legAndBackExercises = trainingDay % 2 == 0
+    val evenNumber = trainingDay % 2 == 0
 
     println(
         """
-        Упражнения для рук:    $armAndAbsExercises 
-        Упражнения для ног:    $legAndBackExercises   
-        Упражнения для спины:  $legAndBackExercises
-        Упражнения для пресса: $armAndAbsExercises
+        Упражнения для рук:    ${!evenNumber} 
+        Упражнения для ног:    $evenNumber  
+        Упражнения для спины:  $evenNumber 
+        Упражнения для пресса: ${!evenNumber}
     """.trimIndent()
     )
 }
