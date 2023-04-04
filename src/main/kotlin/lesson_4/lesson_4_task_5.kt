@@ -18,7 +18,7 @@ fun main() {
     println("Благоприятная ли сегодня погода?")
     val favorableWeatherToday: Boolean = readln().toBoolean()
 
-    val result = (favorableWeatherToday == FAVORABLE_WEATHER_CONDITIONS) && (provisions > minProvision) && ((shipDamage != NO_DAMAGE) && (crewSize in (minCrew + 1)..(recommendedCrew - 1)) || (crewSize == recommendedCrew))
+    val result = (favorableWeatherToday == FAVORABLE_WEATHER_CONDITIONS) && (provisions > minProvision) && ((shipDamage != NO_DAMAGE) && (crewSize in minCrew until recommendedCrew) || (crewSize == recommendedCrew))
 
     println("Может ли корабль отправится в длительное плавание? Результат: $result")
 }
