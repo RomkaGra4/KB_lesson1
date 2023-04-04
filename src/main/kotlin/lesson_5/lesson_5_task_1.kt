@@ -2,8 +2,10 @@ package lesson_5
 
 fun main() {
 
-    val sum = 9 + 6
-    println("Для входа в программу, укажите сумму двух чисел: 9 и 6.")
+    val numberOne = 9
+    val numberTwo = 6
+    val sum = numberOne + numberTwo
+    println("Для входа в программу, укажите сумму двух чисел: $numberOne и $numberTwo.")
     val result = readln().toInt()
 
     if (result == sum)
