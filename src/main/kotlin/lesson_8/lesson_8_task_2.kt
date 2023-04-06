@@ -6,9 +6,12 @@ fun main() {
     println("Какой ингридиент Вас интересует?")
     val userIngredient = readln()
 
-    if (userIngredient in breadIngredient) {
-        println("Ингредиент $userIngredient в рецепте есть")
-    } else {
+    for (i in breadIngredient) {
+        if (userIngredient in breadIngredient) {
+            println("Ингредиент $userIngredient в рецепте есть")
+            break
+        }
         println("Такого ингредиента в рецепте нет")
+        break
     }
 }
