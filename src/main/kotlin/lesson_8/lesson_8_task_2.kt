@@ -7,11 +7,11 @@ fun main() {
     val userIngredient = readln()
 
     for (i in breadIngredient) {
-        if (userIngredient in breadIngredient) {
+
+        if (userIngredient == i) {
             println("Ингредиент $userIngredient в рецепте есть")
-            break
+            return
         }
-        println("Такого ингредиента в рецепте нет")
-        break
     }
+    println("Такого ингредиента в рецепте нет")
 }
