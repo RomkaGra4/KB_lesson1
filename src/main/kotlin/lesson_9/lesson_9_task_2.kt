@@ -7,8 +7,7 @@ fun main() {
     listOfIngredients.forEach { println(it) }
 
     println("Желаете добавить еще?")
-    val answer = readln()
-    if (answer == "да") {
+    if (readln() == "да") {
         println("Какой ингредиент вы хотите добавить?")
         listOfIngredients.add(readln())
         println("Теперь в рецепте есть следующие ингредиенты: $listOfIngredients")
