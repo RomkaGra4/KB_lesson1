@@ -7,7 +7,7 @@ fun main() {
     val userIngredientList = mutableListOf<String>()
 
     println("Запишите названия ингредиентов: ")
-    for (i in 0 until 3) {
+    for (i in 0 until 5) {
         println("Укажите ингредиент №${i + 1}:")
         val ingredient = readln()
         userIngredientList.add(ingredient)
