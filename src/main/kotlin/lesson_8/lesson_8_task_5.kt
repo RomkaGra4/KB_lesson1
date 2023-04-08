@@ -7,8 +7,11 @@ fun main() {
     var arrayOfIngredients = Array<String?>(quantityOfIngredients) { null }
 
     for (i in 0 until quantityOfIngredients) {
-        println("Введите ингредиент с индексом $i")
+        println("Введите ${i + 1} ингредиент:")
         arrayOfIngredients.set(i, readln())
     }
+
+    for (i in arrayOfIngredients)
+        println(i)
 }
 
