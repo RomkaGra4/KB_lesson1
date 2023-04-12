@@ -3,15 +3,15 @@ package lesson_10
 fun main() {
 
     println("Регистрация:")
-    val login = login()
-    val password = password()
+    val login = getLogin()
+    val password = getPassword()
     println("*************")
     println("Авторизация.")
-    authorization(login, password)
+    performAuthorization(login, password)
 
 }
 
-fun authorization(login: String, password: String) {
+fun performAuthorization(login: String, password: String) {
 
     do {
         println("Введите логин:")
@@ -27,14 +27,15 @@ fun authorization(login: String, password: String) {
         println("Ваш код авторизации: $randomCode")
 
         println("Введите КОД для авторизации: ")
-        val userCode = readln().toInt()
-        println("Код неверен! Повторите попытку ввода КОДа!")
-    } while (randomCode != userCode)
+            if (randomCode != readln().toInt()){
+            println("Код неверен! Повторите попытку ввода КОДа!")
+            }
+    } while (randomCode != readln().toInt())
 
     println("Авторизация выполнена! Добро пожаловать ;)")
 }
 
-fun password(): String {
+fun getPassword(): String {
     val symbolRange = ('a'..'z') + ('0'..'9')
     var password = ""
     for (i in 1..6) {
@@ -44,7 +45,7 @@ fun password(): String {
     return password
 }
 
-fun login(): String {
+fun getLogin(): String {
     println("Укажите Ваш логин:")
     var userLogin = readln()
     while (userLogin.length < 4) {
