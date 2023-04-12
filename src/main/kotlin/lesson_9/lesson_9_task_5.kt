@@ -14,14 +14,10 @@ fun main() {
     }
 
     userIngredientList.sort()
-    val userIngredientSet = mutableSetOf<String>()
-    for (i in userIngredientList)
-        userIngredientSet.add(i)
 
     println("${
-        userIngredientSet.joinToString().replaceFirstChar
+        userIngredientList.toSet().joinToString().replaceFirstChar
         { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
     }."
     )
-
 }
