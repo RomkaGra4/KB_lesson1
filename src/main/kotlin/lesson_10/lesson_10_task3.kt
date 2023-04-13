@@ -1,14 +1,13 @@
 package lesson_10
 
-fun main(){
+fun main() {
 
     println("Задайте длину пароля:")
     val passwordLength = readln().toInt()
-
-    println(generatePassword (passwordLength))
+    println(generatePassword(passwordLength))
 }
 
-fun generatePassword (passwordLength: Int): String {
+fun generatePassword(passwordLength: Int): String {
     val passRangeWithSymbols = ('"'..'/') + (':'..'@') + ('['..'`') + ('~')
     val passRangeWithNumbers = ('0'..'9')
     val password = mutableListOf<String>()
