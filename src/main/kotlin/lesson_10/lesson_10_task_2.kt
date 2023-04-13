@@ -4,14 +4,13 @@ fun main() {
 
     println("Введите логин:")
     val login = readln()
-    checkLength(login)
+    validateAndPrint(login)
     println("Введите пароль:")
     val password = readln()
-    checkLength(password)
+    validateAndPrint(password)
 }
 
-fun checkLength(symbols: String) {
+fun validateAndPrint(symbols: String) {
     if (symbols.length < 4)
         println("Логин или пароль недостаточно длинные")
 }
-
