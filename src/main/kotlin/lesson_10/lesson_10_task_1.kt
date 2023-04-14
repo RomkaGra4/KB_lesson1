@@ -3,11 +3,11 @@ package lesson_10
 fun main(){
 
     println("Ход игрока:")
-    val player = rollOfTheDice()
+    val player = rollOfTheDicee()
     println("Результат - $player")
 
     println("Ход компьютера:")
-    val computer = rollOfTheDice()
+    val computer = rollOfTheDicee()
     println("Результат - $computer")
 
     val sumPlayer = player[0] + player[1]
@@ -21,7 +21,7 @@ fun main(){
     }
 }
 
-fun rollOfTheDice (): List<Int> {
+fun rollOfTheDicee (): List<Int> {
     val playRange = 0..6
     val cubeOne = playRange.random()
     val cubeTwo = playRange.random()
