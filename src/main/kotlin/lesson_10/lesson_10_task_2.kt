@@ -3,22 +3,16 @@ package lesson_10
 fun main() {
 
     println("Введите логин:")
-    val login = readln()
-    if (!validate(login)) {
+    if (!validate(readln())) {
         println("Кол-во символов в логине недостаточно")
     }
 
     println("Введите пароль:")
-    val password = readln()
-    if (!validate(password)) {
-        println("Кол-во символов в логине недостаточно")
+    if (!validate(readln())) {
+        println("Кол-во символов в пароле недостаточно")
     }
 }
 
 fun validate(symbols: String): Boolean {
-    var result: Boolean = true
-    if (symbols.length < 4) {
-        result = false
-    }
-    return result
+    return symbols.length >= 4
 }
