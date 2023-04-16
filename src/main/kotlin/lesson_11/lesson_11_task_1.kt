@@ -34,3 +34,12 @@ fun main() {
     """.trimIndent()
     )
 }
+
+class UserData(
+    val id: Int,
+    val login: String,
+    val password: String,
+    val email: String,
+) {
+
+}
