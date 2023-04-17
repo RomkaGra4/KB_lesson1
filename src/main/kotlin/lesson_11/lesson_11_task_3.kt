@@ -18,17 +18,15 @@ fun main() {
             User(name = "Дмитрий", userStatus = "пользователь заглушен")
         )
     )
-
-    val roomsList = listOf(room1, room2)
 }
 
 class Room(
     val cover: String,
     val name: String,
     val listOfParticipants: List<User>,
-) {}
+)
 
 class User(
     val name: String,
     val userStatus: String,
-) {}
+)
