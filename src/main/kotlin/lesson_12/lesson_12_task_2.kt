@@ -18,10 +18,10 @@ class AboutWeather(
     _wasItRaining: Boolean
 ) {
 
-    var dailyTemperature = _dailyTemperature
-    var overnightTemperature = _overnightTemperature
-    var atmospherePressure = _atmospherePressure
-    var wasItRaining = _wasItRaining
+    val dailyTemperature = _dailyTemperature
+    val overnightTemperature = _overnightTemperature
+    val atmospherePressure = _atmospherePressure
+    val wasItRaining = _wasItRaining
 
     fun printInformation() {
         println(
