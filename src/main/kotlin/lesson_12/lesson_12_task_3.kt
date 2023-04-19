@@ -13,10 +13,10 @@ fun main() {
 }
 
 class Day(
-    var dailyTemperature: Int,
-    var overnightTemperature: Int,
-    var atmospherePressure: Int,
-    var wasItRaining: Boolean = false,
+    val dailyTemperature: Int,
+    val overnightTemperature: Int,
+    val atmospherePressure: Int,
+    val wasItRaining: Boolean = false,
 ) {
 
     fun printInformation() {
