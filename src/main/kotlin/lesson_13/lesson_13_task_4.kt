@@ -2,7 +2,7 @@ package lesson_13
 
 fun main() {
 
-    val contact1 = TelephoneBook(name = "Роман", company = "FM Logistic")
+    val contact1 = TelephoneBook(name = "Роман", number = "89655402525", company = "FM Logistic")
     val contact2 = TelephoneBook(name = "Ольга", number = "89605537705")
     val contact3 = TelephoneBook(number = "89165520202", company = "Pepsi Co")
 
@@ -14,12 +14,13 @@ fun main() {
 
 class TelephoneBook(
     val name: String? = null,
-    val number: String? = null,
+    val number: String,
     val company: String? = null,
 )
 
 fun addNewContactList(contactsList: MutableList<TelephoneBook>) {
-    do {println("Добавить новую запись в телефонную книгу:")
+    do {
+        println("Добавить новую запись в телефонную книгу:")
 
         println("Веди имя контакта:")
         val name = if (readln().isEmpty()) null else TODO()
