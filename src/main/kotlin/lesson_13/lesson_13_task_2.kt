@@ -2,16 +2,12 @@ package lesson_13
 
 fun main() {
 
-    val contact = PhoneBook("Роман", 87775530012, null)
+    val contact = PhoneBookContact("Роман", 87775530012, null)
 
-    if (contact != null) {
-        if (contact.company == null) contact.company = "[не указано]"
-    }
-
-    contact?.printInformation()
+    contact.printInformation()
 }
 
-class PhoneBook(
+class PhoneBookContact(
     val name: String,
     val number: Long,
     var company: String? = null ?: "[не указано]",
