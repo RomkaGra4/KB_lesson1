@@ -19,12 +19,6 @@ class ContactOnTelephoneBook(
 
 fun printInformation(contactsList: List<ContactOnTelephoneBook>) {
 
-    for (i in contactsList) {
-        if (i.name == null) i.name = "[не указано]"
-        if (i.number == null) i.number = "[не указано]"
-        if (i.company == null) i.company = "[не указано]"
-    }
-
     for (element in contactsList)
-        println("Имя: ${element.name} \nНомер: ${element.number} \nКомпания: ${element.company} \n")
+        println("Имя: ${element.name?:  "[не указано]"} \nНомер: ${element.number?:  "[не указано]"} \nКомпания: ${element.company?:  "[не указано]"} \n")
 }
