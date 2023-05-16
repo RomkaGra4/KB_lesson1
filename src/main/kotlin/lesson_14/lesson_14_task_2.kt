@@ -48,7 +48,6 @@ class Icebreaker(
     speed: Int,
     box: Int,
     val reinforcedBody: Boolean = true,
-
     ) : StandartShip(name, speed, box) {
 
     fun breakingIce() {
