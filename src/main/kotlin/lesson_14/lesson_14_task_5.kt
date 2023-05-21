@@ -1,9 +1,11 @@
 package lesson_14
 
+import kotlin.math.PI
 import kotlin.math.sqrt
-const val PI = 3.14
 
-fun main(){
+const val RED_FIGURE = "красный"
+
+fun main() {
     val circle1 = Circle("красный", 10.0)
     val circle2 = Circle("черный", 20.5)
     val rectangle1 = Rectangle("черный", 13.2, 27.0)
@@ -19,16 +21,16 @@ fun main(){
 
 abstract class Figure(
     val color: String,
-){
-    abstract fun squareFigure() : Double
+) {
+    abstract fun squareFigure(): Double
 
-    abstract fun perimeterFigure() : Double
+    abstract fun perimeterFigure(): Double
 }
 
 class Circle(
     color: String,
-    val circleRadius : Double,
-) : Figure(color){
+    val circleRadius: Double,
+) : Figure(color) {
     override fun squareFigure(): Double {
         return PI * (circleRadius * circleRadius)
     }
@@ -42,7 +44,7 @@ class Rectangle(
     color: String,
     val width: Double,
     val height: Double,
-) : Figure(color){
+) : Figure(color) {
     override fun squareFigure(): Double {
         return width * height
     }
@@ -57,7 +59,7 @@ class Triangle(
     val side1: Double,
     val side2: Double,
     val side3: Double,
-) : Figure(color){
+) : Figure(color) {
     override fun squareFigure(): Double {
         val semiPerimeter = (side1 + side2 + side3) / 2
         return sqrt(semiPerimeter * (semiPerimeter - side1) * (semiPerimeter - side2) * (semiPerimeter - side3))
@@ -68,17 +70,18 @@ class Triangle(
     }
 }
 
-fun sumOfPerimeterRedFigure(arrayOfFigure: Array<Figure>) : Double{
+fun sumOfPerimeterRedFigure(arrayOfFigure: Array<Figure>): Double {
     var sum: Double = 0.0
     for (i in 0 until arrayOfFigure.size)
-        if (arrayOfFigure[i].color == "красный")
+        if (arrayOfFigure[i].color == RED_FIGURE)
             sum += arrayOfFigure[i].perimeterFigure()
     return sum
 }
 
-fun sumOfSquareRedFigure(arrayOfFigure: Array<Figure>) : Double{
+fun sumOfSquareRedFigure(arrayOfFigure: Array<Figure>): Double {
     var sum: Double = 0.0
     for (i in 0 until arrayOfFigure.size)
-        if (arrayOfFigure[i].color == "красный")
+        if (arrayOfFigure[i].color == RED_FIGURE)
             sum += arrayOfFigure[i].squareFigure()
-    return sum}
+    return sum
+}
