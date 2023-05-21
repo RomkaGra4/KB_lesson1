@@ -1,10 +1,10 @@
 package lesson_14
 
-fun main(){
+fun main() {
 
-    val sputnik1 = Sputnik("Фобос", false,false,false,true)
-    val sputnik2 = Sputnik("Деймос", false,false,false,true)
-    val planet = Planet("Марс", false,false,true,true, listOf(sputnik1.name, sputnik2.name))
+    val sputnik1 = Sputnik("Фобос", false, false, false, true)
+    val sputnik2 = Sputnik("Деймос", false, false, false, true)
+    val planet = Planet("Марс", false, false, true, true, listOf(sputnik1, sputnik2))
 
     planet.printInfo()
 
@@ -23,10 +23,10 @@ class Planet(
     atmosphere: Boolean,
     water: Boolean,
     suitableForLanding: Boolean,
-    val sputniks: List<String>,
-) : HeavenlyBody(inhabited, atmosphere, water, suitableForLanding){
+    val sputniks: List<Sputnik>,
+) : HeavenlyBody(inhabited, atmosphere, water, suitableForLanding) {
 
-    fun printInfo(){
+    fun printInfo() {
         println("Платена $name имеет следующие спутники: $sputniks")
 
     }
