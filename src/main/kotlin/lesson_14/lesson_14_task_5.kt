@@ -4,14 +4,16 @@ import kotlin.math.PI
 import kotlin.math.sqrt
 
 const val RED_FIGURE = "красный"
+const val GREEN_FIGURE = "зеленый"
+const val BLACK_FIGURE = "черный"
 
 fun main() {
-    val circle1 = Circle("красный", 10.0)
-    val circle2 = Circle("черный", 20.5)
-    val rectangle1 = Rectangle("черный", 13.2, 27.0)
-    val rectangle2 = Rectangle("зеленый", 6.5, 9.0)
-    val triangle1 = Triangle("зеленый", 6.0, 5.4, 4.2)
-    val triangle2 = Triangle("красный", 5.0, 5.0, 5.0)
+    val circle1 = Circle(RED_FIGURE, 10.0)
+    val circle2 = Circle(BLACK_FIGURE, 20.5)
+    val rectangle1 = Rectangle(BLACK_FIGURE, 13.2, 27.0)
+    val rectangle2 = Rectangle(GREEN_FIGURE, 6.5, 9.0)
+    val triangle1 = Triangle(GREEN_FIGURE, 6.0, 5.4, 4.2)
+    val triangle2 = Triangle(RED_FIGURE, 5.0, 5.0, 5.0)
     val arrayOfFigure = arrayOf(circle1, circle2, rectangle1, rectangle2, triangle1, triangle2)
 
     println(sumOfPerimeterRedFigure(arrayOfFigure))
