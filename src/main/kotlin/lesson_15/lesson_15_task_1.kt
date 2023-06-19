@@ -5,33 +5,15 @@ fun main() {
     val seagull1 = Seagull("Чайка")
     val duck1 = Duck("Утка")
 
-    carp1.swimming()
-    carp1.flying()
-    println()
-    seagull1.swimming()
-    seagull1.flying()
-    println()
-    duck1.swimming()
-    duck1.flying()
 }
 
-abstract class Creature : Movable {
-
-    abstract val name: String
-
-}
-
-class Carp(override val name: String) : Creature() {
+class Carp(val name: String) : Swim {
     override fun swimming() {
         println("$name умеет плавать")
     }
-
-    override fun flying() {
-        println("$name не умеет летать")
-    }
 }
 
-class Seagull(override val name: String) : Creature() {
+class Seagull(val name: String) : Swim, Fly {
     override fun swimming() {
         println("$name умеет плавать")
     }
@@ -41,7 +23,7 @@ class Seagull(override val name: String) : Creature() {
     }
 }
 
-class Duck(override val name: String) : Creature() {
+class Duck(val name: String) : Swim, Fly {
     override fun swimming() {
         println("$name умеет плавать")
     }
@@ -51,9 +33,13 @@ class Duck(override val name: String) : Creature() {
     }
 }
 
-interface Movable {
+interface Swim {
 
     fun swimming()
+}
+
+interface Fly {
+
     fun flying()
 
 }
