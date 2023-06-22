@@ -7,39 +7,39 @@ fun main() {
 
 }
 
-class Carp(val name: String) : Swim {
-    override fun swimming() {
+class Carp(val name: String) : Swimming {
+    override fun swim() {
         println("$name умеет плавать")
     }
 }
 
-class Seagull(val name: String) : Swim, Fly {
-    override fun swimming() {
+class Seagull(val name: String) : Swimming, Flying {
+    override fun swim() {
         println("$name умеет плавать")
     }
 
-    override fun flying() {
+    override fun fly() {
         println("$name умеет летать")
     }
 }
 
-class Duck(val name: String) : Swim, Fly {
-    override fun swimming() {
+class Duck(val name: String) : Swimming, Flying {
+    override fun swim() {
         println("$name умеет плавать")
     }
 
-    override fun flying() {
+    override fun fly() {
         println("$name умеет летать")
     }
 }
 
-interface Swim {
+interface Swimming {
 
-    fun swimming()
+    fun swim()
 }
 
-interface Fly {
+interface Flying {
 
-    fun flying()
+    fun fly()
 
 }
