@@ -5,12 +5,12 @@ fun main() {
     val car2 = PassengerCar("BMW 512", 2,0)
     val car3 = PassengerCar("Audi 121", 3, 0)
 
-    car1.delivery()
-    car1.traffic()
-    car2.transportation()
-    car2.traffic()
-    car3.transportation()
-    car3.traffic()
+    car1.runDeliver()
+    car1.startMoving()
+    car2.runDeliverOfPassengers()
+    car2.startMoving()
+    car3.runDeliverOfPassengers()
+    car3.startMoving()
 
 }
 
@@ -21,36 +21,39 @@ abstract class Cars() : Movement {
     abstract val cargo: Int
 }
 
-class PassengerCar(override val name: String, override val passengers: Int, override val cargo: Int) : Cars(), TransportationOfPassengers {
-    override fun traffic() {
+class PassengerCar(
+    override val name: String,
+    override val passengers: Int,
+    override val cargo: Int) : Cars(), TransportationOfPassengers {
+    override fun startMoving() {
         println("$name в пути!")
     }
 
-    override fun transportation() {
+    override fun runDeliverOfPassengers() {
         println("$name перевозит $passengers пассажиров")
     }
 
 }
 
 class Truck(override val name: String, override val passengers: Int, override val cargo: Int) : Cars(), Shipping {
-    override fun traffic() {
+    override fun startMoving() {
         println("$name в пути!")
     }
 
-    override fun delivery() {
+    override fun runDeliver() {
         println("$name перевозит $cargo тонны груза и $passengers пассажира")
     }
 
 }
 
 interface Movement {
-    fun traffic()
+    fun startMoving()
 }
 
 interface TransportationOfPassengers {
-    fun transportation()
+    fun runDeliverOfPassengers()
 }
 
 interface Shipping {
-    fun delivery()
+    fun runDeliver()
 }
