@@ -21,4 +21,3 @@ class Circle(private val radius: Int) {
         println(square.toFloat())
     }
 }
-
