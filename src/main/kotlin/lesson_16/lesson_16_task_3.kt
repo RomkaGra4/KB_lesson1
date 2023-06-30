@@ -9,7 +9,7 @@ fun main() {
 
 class User(
     val login: String,
-    private val password: String
+    private val password: String,
 ) {
     fun correctnessCheck() {
 
