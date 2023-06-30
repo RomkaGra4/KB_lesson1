@@ -1,5 +1,4 @@
 package lesson_16
-
 import kotlin.math.pow
 
 private const val PI = 3.14
