@@ -1,24 +1,22 @@
 package lesson_16
+
 import kotlin.math.pow
 
 private const val PI = 3.14
-
 fun main() {
-    val result = Circle(5)
+    val result = Circle(5.0)
     result.printCircumference()
     result.printAreaOfACircle()
 }
 
-class Circle(private val radius: Int) {
-
+class Circle(private val radius: Double) {
     fun printCircumference() {
         val circumference = PI * (radius * 2)
-        println(circumference.toFloat())
+        println(circumference)
     }
 
     fun printAreaOfACircle() {
-        val square = PI * (radius.toDouble().pow(2.0))
-        println(square.toFloat())
+        val square = PI * (radius.pow(2))
+        println(square)
     }
 }
-
