@@ -2,20 +2,19 @@ package lesson_16
 
 fun main() {
 
-    val order1 = Order(1, false)
-    order1.sendingAnApplication(true)
+    val order1 = Order(1)
+    order1.sendingAnApplication()
 
 }
 
 class Order(
     private val id: Int,
-    var readiness: Boolean,
+    var readiness: Boolean = false,
 ) {
     fun getId() = id
-    fun sendingAnApplication(boolean: Boolean) {
+    fun sendingAnApplication() {
         println("Отправляем заявку менеджеру на изменение статуса заказа")
-        changeOrderStatus(boolean)
+        readiness = true
+        println("Статус заказа изменен на $readiness")
     }
-
-    private fun changeOrderStatus(readiness: Boolean) = println("Статус заказа изменен на $readiness")
 }
