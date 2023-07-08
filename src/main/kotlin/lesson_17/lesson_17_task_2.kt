@@ -11,12 +11,11 @@ fun main() {
 class Ship {
 
     var name = "Титаник"
-        get() = "Титаник"
+        get() = field
         set(value) {
             field = value
             if (value != "Титаник")
                 println("ВНИМАНИЕ! Вы не можете изменить название корабля!")
-            field = value
         }
 
     val averageSpeed = 23
