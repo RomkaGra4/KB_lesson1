@@ -13,8 +13,6 @@ class Ship {
     var name = "Титаник"
         get() = field
         set(value) {
-            field = value
-            if (value != "Титаник")
                 println("ВНИМАНИЕ! Вы не можете изменить название корабля!")
         }
 
