@@ -9,7 +9,7 @@ fun main(){
 
 }
 
-class Player(_login: String, _password: String){
+class Player(_login: String, _password: String) {
     var login = _login
         set(value) {
             println("Ваш логин успешно изменен")
@@ -18,5 +18,9 @@ class Player(_login: String, _password: String){
     var password = _password
         set(value) {
             println("Вы не можете изменить пароль")
+            repeat(password.length) {
+                print("*")
+            }
+            println()
         }
 }
