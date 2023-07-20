@@ -11,7 +11,7 @@ fun main(){
 
 }
 
-open class Dice {
+abstract class Dice {
 
     open fun getNumberDice() = ""
 
