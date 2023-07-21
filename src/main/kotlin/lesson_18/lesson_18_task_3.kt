@@ -26,7 +26,7 @@ fun main() {
 
 abstract class Tamagotchi(val name: String, val food: String) {
     open fun sleep() = "$name - спит"
-    open fun eat() = ""
+    abstract fun eat(): String
     open fun play() = "$name играет"
 }
 
