@@ -8,37 +8,36 @@ fun main() {
 
     println(fox1.sleep())
     println(fox1.eat())
+    println(fox1.play())
 
     println()
 
     println(dog1.sleep())
     println(dog1.eat())
+    println(dog1.play())
 
     println()
 
     println(cat1.sleep())
     println(cat1.eat())
+    println(cat1.play())
+
 }
 
 abstract class Tamagotchi(val name: String, val food: String) {
     open fun sleep() = "$name - спит"
-    open fun eat() = "$name - ест $food"
+    open fun eat() = ""
+    open fun play() = "$name играет"
 }
 
 class Fox(name: String, food: String) : Tamagotchi(name, food) {
-    override fun sleep() = "Лиса $name - спит"
-
-    override fun eat() = "$name - ест $food"
-    }
+    override fun eat() = "Лиса $name - ест $food"
+}
 
 class Dog(name: String, food: String) : Tamagotchi(name, food) {
-    override fun sleep() = "Собака $name - спит"
-
     override fun eat() = "Собака $name - ест $food"
 }
 
 class Cat(name: String, food: String) : Tamagotchi(name, food) {
-    override fun sleep() = "Кот $name - спит"
-
     override fun eat() = "Кот $name - ест $food"
 }
