@@ -13,7 +13,7 @@ fun main(){
 
 abstract class Dice {
 
-    open fun getNumberDice() = ""
+    abstract fun getNumberDice(): String
 
 }
 
