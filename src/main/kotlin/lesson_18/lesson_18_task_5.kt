@@ -1,42 +1,41 @@
 package lesson_18
 
 fun main() {
-    val circle1 = Circle(1.5f, 3)
-    val square1 = Square(3,5.3f)
-    val dot1 = Dot(2,9)
+    val circle1 = Circle()
+    val square1 = Square()
+    val dot1 = Dot()
 
-    println(circle1.draw())
-    println(square1.draw())
-    println(dot1.draw())
+    println(circle1.draw(1.5f, 3.0f))
+    println(square1.draw(2.4f, 1.0f))
+    println(dot1.draw(4, 8))
 
 }
 
-abstract class Screen(private val x: Any, private val y: Any) {
+abstract class Screen {
 
-    abstract fun draw(): String
+    abstract fun draw(x: Int, y: Int): String
+    abstract fun draw(x: Float, y: Float): String
 
 }
 
 class Circle(
-    private val x: Any,
-    private val y: Any,
     private val anObject: String = "Круг",
-) : Screen(x, y) {
-    override fun draw() = "Создан объект $anObject с координатами: x = $x, y = $y"
+) : Screen() {
+    override fun draw(x: Int, y: Int) = "Создан объект $anObject с координатами: x = $x, y = $y"
+
+    override fun draw(x: Float, y: Float) = "Создан объект $anObject с координатами: x = $x, y = $y"
 }
 
 class Square(
-    private val x: Any,
-    private val y: Any,
     private val anObject: String = "Квадрат",
-) : Screen(x, y) {
-    override fun draw() = "Создан объект $anObject с координатами: x = $x, y = $y"
+) : Screen() {
+    override fun draw(x: Int, y: Int) = "Создан объект $anObject с координатами: x = $x, y = $y"
+    override fun draw(x: Float, y: Float) = "Создан объект $anObject с координатами: x = $x, y = $y"
 }
 
 class Dot(
-    private val x: Any,
-    private val y: Any,
     private val anObject: String = "Точка",
-) : Screen(x, y) {
-    override fun draw() = "Создан объект $anObject с координатами: x = $x, y = $y"
+) : Screen() {
+    override fun draw(x: Int, y: Int) = "Создан объект $anObject с координатами: x = $x, y = $y"
+    override fun draw(x: Float, y: Float) = "Создан объект $anObject с координатами: x = $x, y = $y"
 }
