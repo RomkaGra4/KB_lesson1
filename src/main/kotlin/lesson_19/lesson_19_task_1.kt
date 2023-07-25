@@ -1,4 +1,4 @@
-package lesson_19
+  package lesson_19
 
 fun main() {
 
@@ -7,19 +7,19 @@ fun main() {
     println("Вы можете добавить в свой аквариум следующих рыбок:")
     for (i in listOfFish) {
         when (i) {
-            101 -> setFish(Fish.GUPPY)
-            102 -> setFish(Fish.ANGELFISH)
-            103 -> setFish(Fish.GOLDFISH)
-            104 -> setFish(Fish.SIAMESE_FIGHTING_FISH)
+            Fish.GUPPY.id -> setFish(Fish.GUPPY)
+            Fish.ANGELFISH.id -> setFish(Fish.ANGELFISH)
+            Fish.GOLDFISH.id -> setFish(Fish.GOLDFISH)
+            Fish.SIAMESE_FIGHTING_FISH.id -> setFish(Fish.SIAMESE_FIGHTING_FISH)
         }
     }
 }
 
-enum class Fish {
-    GUPPY,
-    ANGELFISH,
-    GOLDFISH,
-    SIAMESE_FIGHTING_FISH,
+enum class Fish(val id: Int) {
+    GUPPY(101),
+    ANGELFISH(102),
+    GOLDFISH(103),
+    SIAMESE_FIGHTING_FISH(104),
 }
 
 fun setFish(fish: Fish) {
