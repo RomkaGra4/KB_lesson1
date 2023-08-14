@@ -12,10 +12,10 @@ fun main(){
             }
         }
 
-    println()
+    println("***")
     println(TAKEOFF.getActionDescription())
-    println(LANDING.getActionDescription())
-    println(SHOOTING.getActionDescription())
+    //println(LANDING.getActionDescription())
+    //println(SHOOTING.getActionDescription())
 }
 
 enum class Spaceship(val id: Int){
