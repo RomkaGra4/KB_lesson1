@@ -12,7 +12,7 @@ fun main(){
             }
         }
 
-    println("***")
+    println()
     println(TAKEOFF.getActionDescription())
     //println(LANDING.getActionDescription())
     //println(SHOOTING.getActionDescription())
