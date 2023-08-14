@@ -16,7 +16,6 @@ fun main(){
     println(TAKEOFF.getActionDescription())
     println(LANDING.getActionDescription())
     println(SHOOTING.getActionDescription())
-
 }
 
 enum class Spaceship(val id: Int){
