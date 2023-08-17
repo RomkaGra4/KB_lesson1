@@ -1,47 +1,26 @@
 package lesson_19
+
 import lesson_19.Spaceship.*
 
-fun main(){
+fun main() {
 
-    val spaceship1 = listOf(101, 102, 103)
-        for (i in spaceship1){
-            when(i){
-                TAKEOFF.id -> setTechnique(TAKEOFF)
-                LANDING.id -> setTechnique(LANDING)
-                SHOOTING.id -> setTechnique(SHOOTING)
-            }
-        }
+    val spaceship1 = Spaceship()
 
-    println()
-    println(TAKEOFF.getActionDescription())
-    //println(LANDING.getActionDescription())
-    //println(SHOOTING.getActionDescription())
+    println(spaceship1.takeoff())
+    println(spaceship1.landing())
+    println(spaceship1.shootingFromAsteroids())
 }
 
-enum class Spaceship(val id: Int){
-    TAKEOFF(101) {
-        override fun getActionDescription(): String {
-            return "Корабль взлетает"
-        }
-    },
-    LANDING(102) {
-        override fun getActionDescription(): String {
-            TODO("Need information about additional logic")
-        }
-    },
-    SHOOTING(103) {
-        override fun getActionDescription(): String {
-            TODO()
-        }
-    };
+class Spaceship {
+    fun takeoff(): String {
+        return "Корабль взлетает"
+    }
 
-    abstract fun getActionDescription(): String
-}
+    fun landing(): String {
+        TODO("Need information about additional logic")
+    }
 
-fun setTechnique(action: Spaceship){
-    when(action){
-        TAKEOFF -> println("Взлет")
-        LANDING -> println("Приземление")
-        SHOOTING -> println("Стрельба по астероидам!")
+    fun shootingFromAsteroids(): String {
+        TODO()
     }
 }
