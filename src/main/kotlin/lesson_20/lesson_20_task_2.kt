@@ -14,6 +14,7 @@ class Player(val name: String, var currentHealth: Int, val maxHealth: Int) {
         return currentHealth
     }
 
-    val printResult: () -> Unit =
-        fun() = println("Игрок $name выпил лечебное зелье. Текущее здоровье игрока = ${actionPotions()}")
+    val printResult: () -> Unit = {
+            println("Игрок $name выпил лечебное зелье. Текущее здоровье игрока = ${actionPotions()}")
+        }
 }
