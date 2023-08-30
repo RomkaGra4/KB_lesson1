@@ -6,12 +6,12 @@ fun main() {
 
     val listOfElementsWithLambda: List<() -> Unit> = listOfElements.map {
         {
-            println(it)
+            println("Нажат элемент $it")
         }
     }
 
-    listOfElementsWithLambda.map {
+    listOfElementsWithLambda.forEach {
         if ((listOfElementsWithLambda.indexOf(it) + 1) % 2 == 0)
-            println("Нажат элемент $it")
+            listOfElementsWithLambda[listOfElementsWithLambda.indexOf(it)].invoke()
     }
 }
