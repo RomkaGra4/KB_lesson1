@@ -12,6 +12,6 @@ fun main() {
 
     listOfElementsWithLambda.forEach {
         if ((listOfElementsWithLambda.indexOf(it) + 1) % 2 == 0)
-            listOfElementsWithLambda[listOfElementsWithLambda.indexOf(it)].invoke()
+            it.invoke()
     }
 }
