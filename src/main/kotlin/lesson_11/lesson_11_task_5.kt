@@ -25,16 +25,23 @@ class Forum {
     }
 
     fun createNewMessage(authorId: Int, message: MessageForum) {
-        messages.add(message)
+        val authorInMessage = when (authorId) {
+            1 -> users[authorId - 1]
+            2 -> users[authorId - 1]
+            else -> {
+                println("Пользователь отсутствует")
+            }
+        }
+        val result = MessageForum("$authorInMessage: $message")
+        messages.add(result)
+
     }
 
     fun printThread() {
 
-        for (i in 0 until messages.size)
-            if (i % 2 == 0)
-                println("${users[0]}: ${messages[i]}")
-            else
-                println("${users[1]}: ${messages[i]}")
+        messages.forEach {
+            println(it)
+        }
     }
 }
 
