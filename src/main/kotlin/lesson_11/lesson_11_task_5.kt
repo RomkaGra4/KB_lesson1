@@ -6,10 +6,10 @@ fun main() {
     forum.createNewUser(UserForum("КЛИЕНТ", 1))
     forum.createNewUser(UserForum("СПРАВОЧНАЯ", 2))
 
-    forum.createNewMessage(1, MessageForum("Здравствуйте! Это аэропорт?"))
-    forum.createNewMessage(2, MessageForum("Добрый день! Верно."))
-    forum.createNewMessage(1, MessageForum("Хочу узнать - рейс 'Москва - Актау' вылетает по расписанию?"))
-    forum.createNewMessage(2, MessageForum("Сейчас проверим. Секунду... Да, без изменений!"))
+    forum.createNewMessage(1, MessageForum(UserForum("КЛИЕНТ", 1),"Здравствуйте! Это аэропорт?"))
+    forum.createNewMessage(2, MessageForum(UserForum("СПРАВОЧНАЯ", 2),"Добрый день! Верно."))
+    forum.createNewMessage(1, MessageForum(UserForum("КЛИЕНТ", 1),"Хочу узнать - рейс 'Москва - Актау' вылетает по расписанию?"))
+    forum.createNewMessage(2, MessageForum(UserForum("СПРАВОЧНАЯ", 2),"Сейчас проверим. Секунду... Да, без изменений!"))
 
     forum.printThread()
 
@@ -32,7 +32,7 @@ class Forum {
                 println("Пользователь отсутствует")
             }
         }
-        val result = MessageForum("$authorInMessage: $message")
+        val result = MessageForum(authorInMessage as UserForum,message.toString())
         messages.add(result)
 
     }
@@ -46,4 +46,4 @@ class Forum {
 }
 
 class UserForum(name: String, authorId: Int)
-class MessageForum(text: String)
+class MessageForum(user: UserForum, text: String)
