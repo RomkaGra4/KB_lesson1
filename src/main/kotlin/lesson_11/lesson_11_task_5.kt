@@ -6,6 +6,8 @@ fun main() {
     forum.createNewUser(UserForum("КЛИЕНТ", 1))
     forum.createNewUser(UserForum("СПРАВОЧНАЯ", 2))
 
+    println()
+
     forum.createNewMessage(1, "Здравствуйте! Это аэропорт?")
     forum.createNewMessage(2, "Добрый день! Верно.")
     forum.createNewMessage(1, "Хочу узнать - рейс 'Москва - Актау' вылетает по расписанию?")
@@ -21,7 +23,7 @@ class Forum {
 
     fun createNewUser(userName: UserForum) {
         users.add(userName)
-        println("Добавлен новый пользователь $userName.")
+        println("Добавлен новый пользователь ${userName.name}.")
     }
 
     fun createNewMessage(authorId: Int, message: String) {
@@ -40,10 +42,10 @@ class Forum {
     fun printThread() {
 
         messages.forEach {
-            println(it)
+            println("${it.user.name}: ${it.text}")
         }
     }
 }
 
-class UserForum(name: String, authorId: Int)
-class MessageForum(user: UserForum, text: String)
+class UserForum(val name: String, val authorId: Int)
+class MessageForum(val user: UserForum, val text: String)
