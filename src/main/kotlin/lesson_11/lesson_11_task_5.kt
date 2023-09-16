@@ -6,10 +6,10 @@ fun main() {
     forum.createNewUser(UserForum("КЛИЕНТ", 1))
     forum.createNewUser(UserForum("СПРАВОЧНАЯ", 2))
 
-    forum.createNewMessage(1, MessageForum(UserForum("КЛИЕНТ", 1),"Здравствуйте! Это аэропорт?"))
-    forum.createNewMessage(2, MessageForum(UserForum("СПРАВОЧНАЯ", 2),"Добрый день! Верно."))
-    forum.createNewMessage(1, MessageForum(UserForum("КЛИЕНТ", 1),"Хочу узнать - рейс 'Москва - Актау' вылетает по расписанию?"))
-    forum.createNewMessage(2, MessageForum(UserForum("СПРАВОЧНАЯ", 2),"Сейчас проверим. Секунду... Да, без изменений!"))
+    forum.createNewMessage(1, "Здравствуйте! Это аэропорт?")
+    forum.createNewMessage(2, "Добрый день! Верно.")
+    forum.createNewMessage(1, "Хочу узнать - рейс 'Москва - Актау' вылетает по расписанию?")
+    forum.createNewMessage(2, "Сейчас проверим. Секунду... Да, без изменений!")
 
     forum.printThread()
 
@@ -24,17 +24,17 @@ class Forum {
         println("Добавлен новый пользователь $userName.")
     }
 
-    fun createNewMessage(authorId: Int, message: MessageForum) {
-        val authorInMessage = when (authorId) {
-            1 -> users[authorId - 1]
-            2 -> users[authorId - 1]
+    fun createNewMessage(authorId: Int, message: String) {
+        val authorInMessage: MessageForum? = when (authorId) {
+            1 -> MessageForum(users[authorId - 1], message)
+            2 -> MessageForum(users[authorId - 1], message)
             else -> {
-                println("Пользователь отсутствует")
+                null
             }
         }
-        val result = MessageForum(authorInMessage as UserForum,message.toString())
-        messages.add(result)
-
+        if (authorInMessage != null) {
+            messages.add(authorInMessage)
+        }
     }
 
     fun printThread() {
