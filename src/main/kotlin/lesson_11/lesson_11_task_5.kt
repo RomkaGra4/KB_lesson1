@@ -3,8 +3,8 @@ package lesson_11
 fun main() {
 
     val forum = Forum()
-    forum.createNewUser(UserForum("КЛИЕНТ", 1))
-    forum.createNewUser(UserForum("СПРАВОЧНАЯ", 2))
+    forum.createNewUser(UserForum("КЛИЕНТ"))
+    forum.createNewUser(UserForum("СПРАВОЧНАЯ"))
 
     println()
 
@@ -20,32 +20,24 @@ fun main() {
 class Forum {
     val users = mutableListOf<UserForum>()
     val messages = mutableListOf<MessageForum>()
-
-    fun createNewUser(userName: UserForum) {
-        users.add(userName)
-        println("Добавлен новый пользователь ${userName.name}.")
+    var authorId = 0
+    fun createNewUser(userName: UserForum, authorId: Int = ++this.authorId) {
+        users.add(UserForum(userName.name, authorId))
+        println("Добавлен новый пользователь ${userName.name} c ID - ${authorId}.")
     }
 
     fun createNewMessage(authorId: Int, message: String) {
-        val authorInMessage: MessageForum? = when (authorId) {
-            1 -> MessageForum(users[authorId - 1], message)
-            2 -> MessageForum(users[authorId - 1], message)
-            else -> {
-                null
-            }
-        }
-        if (authorInMessage != null) {
-            messages.add(authorInMessage)
-        }
+        val authorAndMessage: MessageForum = MessageForum(users[authorId - 1], message)
+        messages.add(authorAndMessage)
     }
 
     fun printThread() {
 
         messages.forEach {
-            println("${it.user.name}: ${it.text}")
+            println("${it.user.name} (ID №${it.user.authorId}): ${it.text}")
         }
     }
 }
 
-class UserForum(val name: String, val authorId: Int)
+class UserForum(val name: String, var authorId: Int = 0)
 class MessageForum(val user: UserForum, val text: String)
