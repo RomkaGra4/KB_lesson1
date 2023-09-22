@@ -4,36 +4,25 @@ import kotlin.random.Random.Default.nextBoolean
 
 fun main() {
     val listOfDays = mutableListOf<DayAndNightWeather>()
+    val averageDayTemperature = mutableListOf<Int>()
+    val averageNightTemperature = mutableListOf<Int>()
+    val averagePressure = mutableListOf<Int>()
+    var rainyDay = 0
+
     for (i in 1..10) {
         listOfDays.add(DayAndNightWeather())
-    }
-
-    var averageDayTemperature = 0
-    for (i in 1..10) {
-        averageDayTemperature += listOfDays[i - 1].dailyTemperature
-    }
-
-    var averageNightTemperature = 0
-    for (i in 1..10) {
-        averageNightTemperature += listOfDays[i - 1].overnightTemperature
-    }
-
-    var averagePressure = 0
-    for (i in 1..10) {
-        averagePressure += listOfDays[i - 1].atmospherePressure
-    }
-
-    var rainyDay = 0
-    for (i in 1..10) {
+        averageDayTemperature.add(listOfDays[i - 1].dailyTemperature)
+        averageNightTemperature.add(listOfDays[i - 1].overnightTemperature)
+        averagePressure.add(listOfDays[i - 1].atmospherePressure)
         if (listOfDays[i - 1].wasItRaining == true)
             rainyDay++
     }
 
     println(
         """ ***
-        Средняя температура днем:     ${averageDayTemperature / listOfDays.size}
-        Средняя температура ночью:    ${averageNightTemperature / listOfDays.size}
-        Cреднее атмосферное давление: ${averagePressure / listOfDays.size}
+        Средняя температура днем:     ${averageDayTemperature.average()}
+        Средняя температура ночью:    ${averageNightTemperature.average()}
+        Cреднее атмосферное давление: ${averagePressure.average().toInt()}
         Дождливых дней:               $rainyDay
         """.trimMargin()
     )
