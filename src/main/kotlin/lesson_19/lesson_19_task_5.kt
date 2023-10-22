@@ -5,10 +5,10 @@ fun main() {
     val listOfUsers = mutableListOf<Human>()
 
     println("Введите данные 5х пользователей в следующем формате: имя, пол")
-    println("Пол пользователя: 100 - мужчина, 101 - женщина")
+    println("Пол пользователя: male или female")
 
     for (i in 1..5) {
-        listOfUsers.add(Human(readln(), readln().toInt()))
+        listOfUsers.add(Human(readln(), readLine().toString()))
     }
 
     println("Список пользователей (ниже): ")
@@ -18,24 +18,24 @@ fun main() {
 
 }
 
-class Human(val name: String?, gender: Int) {
+class Human(val name: String?, gender: String) {
 
-    var gender = when (gender) {
-        Genders.MALE.id -> setGenders(Genders.MALE)
-        Genders.FEMALE.id -> setGenders(Genders.FEMALE)
-        else -> "пол не указан"
+    var gender = when (gender.toUpperCase()) {
+        Gender.MALE.textGender -> setGenders(Gender.MALE)
+        Gender.FEMALE.textGender -> setGenders(Gender.FEMALE)
+        else -> "Пол не определен! Введите данные повторно."
     }
 }
 
-enum class Genders(val id: Int) {
-    MALE(100),
-    FEMALE(101);
+enum class Gender(val textGender: String?) {
+    MALE("MALE"),
+    FEMALE("FEMALE");
 }
 
-fun setGenders(gender: Genders): String {
+fun setGenders(gender: Gender): String {
     val result = when (gender) {
-        Genders.MALE -> "мужчина"
-        Genders.FEMALE -> "женщина"
+        Gender.MALE -> "мужчина"
+        Gender.FEMALE -> "женщина"
     }
     return result
 }
