@@ -20,22 +20,15 @@ fun main() {
 
 class Human(val name: String?, gender: String) {
 
-    var gender = when (gender.toUpperCase()) {
-        Gender.MALE.textGender -> setGenders(Gender.MALE)
-        Gender.FEMALE.textGender -> setGenders(Gender.FEMALE)
-        else -> "Пол не определен! Введите данные повторно."
+    var gender = when (gender.lowercase()) {
+        Gender.MALE.textGender -> Gender.MALE
+        Gender.FEMALE.textGender -> Gender.FEMALE
+        else -> Gender.ERROR
     }
 }
 
 enum class Gender(val textGender: String?) {
-    MALE("MALE"),
-    FEMALE("FEMALE");
-}
-
-fun setGenders(gender: Gender): String {
-    val result = when (gender) {
-        Gender.MALE -> "мужчина"
-        Gender.FEMALE -> "женщина"
-    }
-    return result
+    MALE("МУЖЧИНА"),
+    FEMALE("ЖЕНЩИНА"),
+    ERROR("Пол не определен! Введите данные повторно.");
 }
