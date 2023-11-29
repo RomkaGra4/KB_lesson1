@@ -15,16 +15,20 @@ fun main() {
 
 }
 
-class RobotSay(var phrase: MutableList<String>) {
+class RobotSay(phrase: MutableList<String>) {
 
-    fun setModifier(): String {
-        return phrase[(0 until phrase.size).random()]
+
+    private val randomString = phrase.random()
+    private var modifier: (String) -> String = { it }
+
+    fun say() {
+        println(modifier(randomString))
     }
 
-    val say: () -> Unit = {
-
-        println("Выбрана рандомная фраза: ${setModifier()}")
+    fun setModifier(modifier: (String) -> String) {
+        this.modifier = modifier
     }
+
 }
 
 
