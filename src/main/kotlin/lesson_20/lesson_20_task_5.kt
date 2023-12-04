@@ -12,6 +12,7 @@ fun main() {
     )
 
     phrases.say()
+    phrases.setModifier { phrases.say().toString() }
 
 }
 
