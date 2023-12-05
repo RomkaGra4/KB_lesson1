@@ -12,7 +12,10 @@ fun main() {
     )
 
     phrases.say()
-    phrases.setModifier { phrases.say().toString() }
+    phrases.setModifier {
+        it.reversed()
+    }
+    phrases.say()
 
 }
 
