@@ -1,20 +1,16 @@
 package lesson_21
 
-import java.io.File
-
 fun main() {
 
-    val file = File("")
-    file.evenNumbersSum()
+    val list = listOf(5, 3, 2, 4, 6, 4).evenNumbersSum()
 
 }
 
-fun File.evenNumbersSum() {
+fun List<Int>.evenNumbersSum() {
 
-    val numbers = listOf(5, 3, 2, 4, 6)
     var result = 0
 
-    for (i in numbers)
+    for (i in this)
         if (i % 2 == 0)
             result += i
 
