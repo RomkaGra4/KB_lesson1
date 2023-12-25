@@ -13,7 +13,7 @@ fun main() {
 
 fun File.writeTextAndSave() {
 
-    val text = readLine()!!.lowercase()
+    val text = readln().lowercase()
     createNewFile()
     writeText(text + this.readText())
 
