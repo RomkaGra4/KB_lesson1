@@ -2,13 +2,14 @@ package lesson_22
 
 fun main() {
 
-    val object1 = MainScreenState("Данные...", true)
-    val object2 = ViewModel(object1.copy(isLoading = true))
+    val object1 = ViewModel(MainScreenState("Первичные данные ..."))
+    val object2 = ViewModel(object1.mainScreenState.copy(isLoading = true))
     object2.loadData()
 
 }
 
-class ViewModel(mainScreenState: MainScreenState) {
+class ViewModel(val mainScreenState: MainScreenState) {
+
 
     fun loadData() {
         println(MainScreenState("...отсутствие данных"))
