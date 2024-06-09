@@ -2,19 +2,28 @@ package lesson_22
 
 fun main() {
 
-    val object1 = ViewModel(MainScreenState("Первичные данные ..."))
-    val object2 = ViewModel(object1.mainScreenState.copy(isLoading = true))
-    object2.loadData()
+    val viewModel = ViewModel()
+    println(viewModel.state)
+    viewModel.loadData()
 
 }
 
-class ViewModel(val mainScreenState: MainScreenState) {
+class ViewModel {
 
+    var state: MainScreenState = MainScreenState("Data from server...")
 
     fun loadData() {
-        println(MainScreenState("...отсутствие данных"))
-        println(MainScreenState("...загрузка данных"))
-        println(MainScreenState("...наличие загруженных данных"))
+        state = state.copy(isLoading = true)
+        println(state)
+        var loadedData = "... отсутствие данных"
+        state = state.copy(data = loadedData)
+        println(state)
+        loadedData = "...загрузка данных"
+        state = state.copy(data = loadedData)
+        println(state)
+        loadedData = "....наличие загруженных данных"
+        state = state.copy(data = loadedData)
+        println(state)
     }
 
 }
